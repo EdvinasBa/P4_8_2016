@@ -10,7 +10,7 @@ namespace U4___Rework
     class Program
     {
         public const int MaxPlaces = 100;
-        public const int MaxCities = 2;
+        public const int MaxCities = 3;
 
         static void Main(string[] args)
         {
@@ -19,7 +19,7 @@ namespace U4___Rework
 
             cities[0] = new City("Kaunas");
             cities[1] = new City("Vilnius");
-          //  cities[2] = new City("Biržai");
+            cities[2] = new City("Biržai");
 
 
             string[] filePaths = Directory.GetFiles(Directory.GetCurrentDirectory(), "L4Data_*.csv");
