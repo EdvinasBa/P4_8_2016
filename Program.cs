@@ -29,11 +29,8 @@ namespace U4___Rework
                 ReadCityData(cities, path);
             }
 
-            for (int i = 0; i < cities.Length; i++)
-                for (int j = 0; j < cities[i].Museums.Count; j++)
-                {
-                    Console.WriteLine(cities[i].Museums.GetPlace(j).ToString());
-                }
+            PrintMuseumsToConsole(cities);
+            PrintMonumentsToConsole(cities);
             Console.ReadLine();
 
         }
@@ -96,6 +93,42 @@ namespace U4___Rework
                     return count-1;
             }
             return -1;
+        }
+
+        public static void PrintMuseumsToConsole(City[] cities)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Museums:");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            for (int i = 0; i < cities.Length; i++)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine(cities[i].CityName);
+                Console.ForegroundColor = ConsoleColor.Gray;
+                for (int j = 0; j < cities[i].Museums.Count; j++)
+                {
+                    Console.WriteLine(cities[i].Museums.GetPlace(j).ToString().Replace(',','|'));
+                }
+            }
+            Console.WriteLine();
+        }
+
+        public static void PrintMonumentsToConsole(City[] cities)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Monuments:");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            for (int i = 0; i < cities.Length; i++)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine(cities[i].CityName);
+                Console.ForegroundColor = ConsoleColor.Gray;
+                for (int j = 0; j < cities[i].Monuments.Count; j++)
+                {
+                    Console.WriteLine(cities[i].Monuments.GetPlace(j).ToString().Replace(',', '|'));
+                }
+            }
+            Console.WriteLine();
         }
     }
 }
