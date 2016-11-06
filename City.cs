@@ -1,22 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace U4___Rework
+﻿namespace U4___Rework
 {
     class City
     {
         public string CityName { get; set; }
+        public string ResponsiblePerson { get; set; }
         public PlaceOfInterestContainer Monuments { get; set; }
-        public PlaceOfInterestContainer Museums { get; set; };
+        public PlaceOfInterestContainer Museums { get; set; }
 
-        public City(string cityName)
+        public City() { }
+        public City(string cityName, string responsiblePerson)
         {
             CityName = cityName;
-            PlaceOfInterestContainer Monuments = new PlaceOfInterestContainer(MaxPlaces);
-            PlaceOfInterestContainer Museums = new PlaceOfInterestContainer(MaxPlaces);
+            ResponsiblePerson = responsiblePerson;
+            Monuments = new PlaceOfInterestContainer(Program.MaxPlaces);
+            Museums = new PlaceOfInterestContainer(Program.MaxPlaces);
         }
     }
 }

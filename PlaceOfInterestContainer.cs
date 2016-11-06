@@ -16,12 +16,12 @@ namespace U4___Rework
             Places = new PlaceOfInterest[max];
         }
 
-        void AddPlace(PlaceOfInterest place)
+        public void AddPlace(PlaceOfInterest place)
         {
             Places[Count++] = place;
         }
 
-        PlaceOfInterest GetPlace(int index)
+        public PlaceOfInterest GetPlace(int index)
         {
             return Places[index];
         }

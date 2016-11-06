@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace U4___Rework
+﻿namespace U4___Rework
 {
     class PlaceOfInterest
     {
@@ -20,7 +14,6 @@ namespace U4___Rework
             Adress = adress;
             Year = year;
         }
-
         public override int GetHashCode()
         {
             return Name.GetHashCode() ^ Adress.GetHashCode() ^ Year.GetHashCode();
