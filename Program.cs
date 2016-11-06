@@ -31,6 +31,8 @@ namespace U4___Rework
 
             PrintMuseumsToConsole(cities);
             PrintMonumentsToConsole(cities);
+            PrintAllGuidesToConsole(cities);
+
             Console.ReadLine();
 
         }
@@ -90,7 +92,7 @@ namespace U4___Rework
             {
                 count++;
                 if (city.CityName == cityName)
-                    return count-1;
+                    return count - 1;
             }
             return -1;
         }
@@ -107,7 +109,7 @@ namespace U4___Rework
                 Console.ForegroundColor = ConsoleColor.Gray;
                 for (int j = 0; j < cities[i].Museums.Count; j++)
                 {
-                    Console.WriteLine(cities[i].Museums.GetPlace(j).ToString().Replace(',','|'));
+                    Console.WriteLine(cities[i].Museums.GetPlace(j).ToString().Replace(',', '|'));
                 }
             }
             Console.WriteLine();
@@ -129,6 +131,42 @@ namespace U4___Rework
                 }
             }
             Console.WriteLine();
+        }
+
+        public static int CountGuides(City city)
+        {
+            int guides = 0;
+            for (int i = 0; i < city.Museums.Count; i++)
+            {
+                Museum museum = city.Museums.GetPlace(i) as Museum;
+                if (museum.HasGuide)
+                {
+                    guides++;
+                }
+            }
+            return guides;
+        }
+
+        public static void PrintAllGuidesToConsole(City[] cities)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Guide count:");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            int total = 0;
+            foreach(City city in cities)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write("{0,-10} : ",city.CityName);
+                Console.ForegroundColor = ConsoleColor.Gray;
+                int count = CountGuides(city);
+                Console.WriteLine(count);
+                total += count;
+            }
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            string totalText = "Total";
+            Console.Write("{0,-10} : ", totalText);
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine(total);
         }
     }
 }
