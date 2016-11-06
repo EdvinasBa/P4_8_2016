@@ -1,2 +1,30 @@
 # P4_8_2016
-P4 - Paveldėjimas
+U4_8. Turistų informacijos centras. 
+
+Turizmo informacijos centre perorganizuoti ir atskirai surašyti
+duomenys apie kiekviename mieste veikiančius muziejus. 
+
+Keičiasi duomenų formatas. Pirmoje eilutėje –
+
+miestas, antroje – atsakingo asmens vardas ir pavardė. 
+
+Turizmo informacijos centras teikia informaciją apie
+lankytinas vietas – muziejus, paminklus ir kita. 
+
+Sukurkite klasę „LankytinaVieta“ (laukai - pavadinimas,
+adresas, įkūrimo ar pastatymo metai), kurią paveldės klasės  Check
+
+“Muziejus” (papildomas laukas – tipas, darbo
+dienos, bilieto kaina, požymis „turi gidą“) ir 
+
+“Paminklas” (papildomas laukas – autorius, kam skirtas).
+
+ Suskaičiuokite, kiek muziejų turi gidus, rezultatą atspausdinkite ekrane.
+
+ Raskite seniausią lankytiną vietą, visą informaciją apie ją atspausdinkite ekrane.
+
+ Sudarykite visų lankytinų vietų sąrašą, išrikiuokite pagal metus ir pavadinimą, įrašykite visų
+lankytinų vietų pavadinimus į failą „VisosVietos.csv“.
+
+ Sudarykite lankytinų vietų, kurios buvo pastatytos po Lietuvos nepriklausomybės paskelbimo
+(po 1990 m.) sąrašą. Į failą „Po1990.csv“ įrašykite visus lankytinos vietos duomenis. 
