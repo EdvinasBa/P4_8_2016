@@ -8,6 +8,14 @@
         public PlaceOfInterestContainer Museums { get; set; }
 
         public City() { }
+
+        public City(string cityName)
+        {
+            CityName = cityName;
+            Monuments = new PlaceOfInterestContainer(Program.MaxPlaces);
+            Museums = new PlaceOfInterestContainer(Program.MaxPlaces);
+        }
+
         public City(string cityName, string responsiblePerson)
         {
             CityName = cityName;
@@ -15,5 +23,7 @@
             Monuments = new PlaceOfInterestContainer(Program.MaxPlaces);
             Museums = new PlaceOfInterestContainer(Program.MaxPlaces);
         }
+
+
     }
 }
