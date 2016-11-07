@@ -4,6 +4,7 @@
     {
         public string Author { get; set; }
         public string IntendedFor { get; set; }
+        public const string Id = "mo";
 
         public Monument() { }
 
