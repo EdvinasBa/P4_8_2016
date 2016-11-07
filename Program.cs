@@ -33,6 +33,11 @@ namespace U4___Rework
             PrintMonumentsToConsole(cities);
             PrintAllGuidesToConsole(cities);
 
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Oldest place:");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            PrintPlace((FindOldestPlace(cities)));
+
             Console.ReadLine();
 
         }
@@ -58,7 +63,7 @@ namespace U4___Rework
 
                     switch (data[0].ToLower())
                     {
-                        case "mo":
+                        case Monument.Id:
                             string author = data[count++];
                             string intendedFor = data[count++];
                             Monument monument = new Monument(name, adress, year, author, intendedFor);
@@ -67,7 +72,7 @@ namespace U4___Rework
                                 cities[cityIndex].Monuments.AddPlace(monument);
                             }
                             break;
-                        case "mu":
+                        case Museum.Id:
                             string type = data[count++];
                             bool[] worksOn = new bool[7];
                             for (int i = 0; i < 7; i++)
@@ -133,6 +138,23 @@ namespace U4___Rework
             Console.WriteLine();
         }
 
+        public static void PrintPlace(PlaceOfInterest place)
+        {
+            if (place is Museum)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("Museum:");
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.WriteLine(place.ToString());
+            }
+            if (place is Monument)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("Monument:");
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.WriteLine(place.ToString());
+            }
+        }
         public static int CountGuides(City city)
         {
             int guides = 0;
@@ -153,10 +175,10 @@ namespace U4___Rework
             Console.WriteLine("Guide count:");
             Console.ForegroundColor = ConsoleColor.Gray;
             int total = 0;
-            foreach(City city in cities)
+            foreach (City city in cities)
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.Write("{0,-10} : ",city.CityName);
+                Console.Write("{0,-10} : ", city.CityName);
                 Console.ForegroundColor = ConsoleColor.Gray;
                 int count = CountGuides(city);
                 Console.WriteLine(count);
@@ -167,6 +189,48 @@ namespace U4___Rework
             Console.Write("{0,-10} : ", totalText);
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine(total);
+            Console.WriteLine();
         }
+
+        public static PlaceOfInterest FindOldestPlace(City[] cities)
+        {
+
+            PlaceOfInterestContainer allPlaces = new PlaceOfInterestContainer(MaxPlaces);
+
+            foreach (City city in cities)
+            {
+                for (int i = 0; i < city.Museums.Count; i++)
+                    allPlaces.AddPlace(city.Museums.GetPlace(i));
+                for (int i = 0; i < city.Monuments.Count; i++)
+                    allPlaces.AddPlace(city.Monuments.GetPlace(i));
+            }
+
+            int minIndex = 0;
+            int minValue = 3000;
+
+            for (int i = 0; i < allPlaces.Count; i++)
+            {
+                if (allPlaces.GetPlace(i).Year < minValue)
+                {
+                    minValue = allPlaces.GetPlace(i).Year;
+                    minIndex = i;
+                }
+            }
+            return allPlaces.GetPlace(minIndex);
+        }
+        /*
+         * Rikiavimas
+void Išrinkimas {
+    int nuo, t;
+    for(int i = 0; i < N - 1; i++) {
+        nuo = i;
+        for(int j = i+1; j < N; j++)
+            if (a[j] < a[nuo]) nuo = j;
+        t = a[nuo];
+        a[nuo] = a[i];
+        a[i] = t;
+    }
+}
+        */
     }
 }
