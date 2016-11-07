@@ -7,6 +7,7 @@
         public bool[] WorksOn { get; set; }
         public double TicketPrice { get; set; }
         public bool HasGuide { get; set; }
+        public const string Id = "mu";
 
         public Museum() { }
 
