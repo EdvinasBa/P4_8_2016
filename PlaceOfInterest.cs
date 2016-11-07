@@ -5,6 +5,7 @@
         public string Name { get; set; }
         public string Adress { get; set; }
         public int Year { get; set; }
+        //public string Id { get; set; }
 
         public PlaceOfInterest() { }
 
