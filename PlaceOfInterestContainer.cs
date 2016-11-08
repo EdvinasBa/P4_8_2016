@@ -25,6 +25,10 @@ namespace U4___Rework
         {
             return Places[index];
         }
+        public void SetPlace(PlaceOfInterest place, int index)
+        {
+            Places[index] = place;
+        }
 
         public bool Contains(PlaceOfInterest place)
         {

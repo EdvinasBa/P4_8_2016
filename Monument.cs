@@ -16,7 +16,11 @@
         }
         public override string ToString()
         {
-            return string.Format("{0,-10}, {1,-10}, {2,-10}, {3,-10}, {4,-10}", Name, Adress, Year, Author, IntendedFor);
+            return string.Format("{0,-10} | {1,-20} | {2,-4} | {3,-10} | {4,-10}", Name, Adress, Year, Author, IntendedFor);
+        }
+        public override string ToCsv()
+        {
+            return string.Format("{0},{1},{2},{3},{4}", Name, Adress, Year, Author, IntendedFor);
         }
 
     }

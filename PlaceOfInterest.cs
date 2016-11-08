@@ -15,6 +15,12 @@
             Adress = adress;
             Year = year;
         }
+
+        public virtual string ToCsv()
+        {
+            return "Error, a derived class has not implemented this method (ToCsv())";
+        }
+
         public override int GetHashCode()
         {
             return Name.GetHashCode() ^ Adress.GetHashCode() ^ Year.GetHashCode();
