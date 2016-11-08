@@ -25,10 +25,12 @@ bld/
 [Ll]og/
 
 #Don't ignore these
+!/bin/
+!/bin/debug/
 !L4Data_Panevezys.csv
 !L4Data_Kaunas.csv
 !L4Data_Vilnius.csv
-!/bin/debug/
+
 
 # Visual Studio 2015 cache/options directory
 .vs/
