@@ -11,9 +11,9 @@
 *.userprefs
 
 #Don't ignore these
-!/bin/debug/L4Data_Kaunas
-!/bin/debug/L4Data_Vilnius
-!/bin/debug/L4Data_Panevezys
+!/bin/debug/L4Data_Kaunas.csv
+!/bin/debug/L4Data_Vilnius.csv
+!/bin/debug/L4Data_Panevezys.csv
 
 # Build results
 [Dd]ebug/
