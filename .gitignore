@@ -28,9 +28,7 @@ bld/
 !L4Data_Panevezys.csv
 !L4Data_Kaunas.csv
 !L4Data_Vilnius.csv
-!/bin/debug
-!/bin/debug
-!/bin/debug
+!/bin/debug/
 
 # Visual Studio 2015 cache/options directory
 .vs/
