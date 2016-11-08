@@ -10,13 +10,7 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
-#Don't ignore these
-!L4Data_Panevezys.csv
-!L4Data_Kaunas.csv
-!L4Data_Vilnius.csv
-!/bin/debug
-!/bin/debug
-!/bin/debug
+
 
 # Build results
 [Dd]ebug/
@@ -29,6 +23,14 @@ bld/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
+
+#Don't ignore these
+!L4Data_Panevezys.csv
+!L4Data_Kaunas.csv
+!L4Data_Vilnius.csv
+!/bin/debug
+!/bin/debug
+!/bin/debug
 
 # Visual Studio 2015 cache/options directory
 .vs/
