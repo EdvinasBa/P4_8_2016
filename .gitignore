@@ -10,6 +10,11 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
+#Don't ignore these
+!/bin/debug/L4Data_Kaunas
+!/bin/debug/L4Data_Vilnius
+!/bin/debug/L4Data_Panevezys
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
